@@ -25,6 +25,7 @@ pipeline {
             tools { git 'Default' }
             steps {
                 git branch: 'main', url: 'https://github.com/satyambotadara2710/cicdFrontend.git'
+                git branch: 'main', url: 'https://github.com/satyambotadara2710/JenkinsFiles.git'
             }
         }
 
@@ -55,7 +56,6 @@ pipeline {
             steps {
                 script {
                     externalScript.runContainer(DOCKER_REPO, IMAGE_NAME, CONTAINER_NAME, PORT)
-                    // externalScript.hello()
                 }
             }
         }
